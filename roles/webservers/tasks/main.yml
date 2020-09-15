@@ -1,0 +1,17 @@
+---
+# tasks file for webservers
+- name: Install apache
+  yum:
+    name: httpd
+    state: present
+- name: Deploy static website on apache
+  copy:
+    src: index.html
+    dest: /var/www/html/
+  notify:
+    - restart apache
+- name: start and enable apache
+  service:
+    name: httpd
+    state: started
+    enabled: yes

@@ -1,0 +1,15 @@
+[webservers]
+172.31.32.145
+172.31.39.209
+
+[loadbalancer]
+172.31.40.118
+
+
+[loadbalancer:vars]
+ansible_user=ec2-user
+ansible_ssh_private_key_file=/home/ec2-user/node.pem
+
+[webservers:vars]
+ansible_user=ec2-user
+ansible_ssh_private_key_file=/home/ec2-user/node.pem
